@@ -1,19 +1,16 @@
 pipeline {
-agent any
-tools {
-        maven 'mvn'
+    agent any
+     tools {
+        maven 'maven'
         jdk 'jdk'
     }
-stages {
-stage('gitpull') {
-  steps {
-git "https://github.com/nazu216/stable.git"
-}
-}
-stage('build') {
-  steps { 
-    sh "mvn clean package"
-  }
-}
-}
+    stages{
+        stage ('build') {
+            steps {
+        echo "code is building"
+         sh 'mvn clean'
+         sh 'mvn install'
+            }
+        }
+    }
 }
