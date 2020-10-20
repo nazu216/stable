@@ -1,6 +1,9 @@
 pipeline {
 agent any
-tools "jdk" "mvn"
+tools {
+        maven 'mvn'
+        jdk 'jdk'
+    }
 stages {
 stage('gitpull') {
   steps {
