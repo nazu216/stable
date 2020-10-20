@@ -1,10 +1,10 @@
 pipeline {
 agent any
 stages {
-stage('gitpull") {
+stage('gitpull') {
 git "https://github.com/nazu216/stable.git"
 }
-stage ("build") {
+stage ('build') {
 sh "mvn clean package"
 }
 }
