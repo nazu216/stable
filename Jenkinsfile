@@ -1,5 +1,6 @@
 pipeline {
 agent any
+tools jdk mvn
 stages {
 stage('gitpull') {
   steps {
